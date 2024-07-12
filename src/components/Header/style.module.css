@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  box-shadow: 0 1px 0 #e5e9f2;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: var(--dark);
+    border-radius: 2px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      border-bottom: 2px solid var(--primary);
+    }
+  }
+}

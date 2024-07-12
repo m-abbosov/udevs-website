@@ -1,0 +1,35 @@
+.button {
+  padding: 10px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #fff;
+  min-width: 112px;
+  max-width: 248px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--primary);
+  transition: transform 0.2s ease;
+  -webkit-transition: transform 0.2s ease;
+  -moz-transition: transform 0.2s ease;
+  -ms-transition: transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+  }
+}
+
+.buttonLg {
+  padding: 13px 16px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+  min-width: 112px;
+  max-width: 248px;
+  width: 100%;
+}
