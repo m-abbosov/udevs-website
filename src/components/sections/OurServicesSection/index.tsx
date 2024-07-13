@@ -1,5 +1,5 @@
 import SectionHeading from "@/components/common/SectionHeading";
-import {services} from "@/utils/data";
+import {services} from "@/utils/servicesData";
 import Image from "next/image";
 import css from "./style.module.css";
 

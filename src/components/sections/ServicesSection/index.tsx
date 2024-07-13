@@ -1,8 +1,8 @@
 import SectionHeading from "@/components/common/SectionHeading";
-import {services} from "@/utils/data";
 import Image from "next/image";
 import css from "./style.module.css";
 
+import {services} from "@/utils/servicesData";
 import BgPattern from "../../../../public/images/bg_pattern.png";
 
 const ServicesSection = () => {

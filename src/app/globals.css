@@ -28,6 +28,11 @@
   font-family: "Manrope", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;

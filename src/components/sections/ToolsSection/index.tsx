@@ -2,7 +2,8 @@
 import Radio from "@/components/common/Radio";
 
 import SectionHeading from "@/components/common/SectionHeading";
-import {technologies, tools} from "@/utils/data";
+
+import {technologies, tools} from "@/utils/technologiesData";
 import Image from "next/image";
 import {useState} from "react";
 import css from "./style.module.css";

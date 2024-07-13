@@ -1,0 +1,99 @@
+.section {
+  padding: 30px 0;
+
+  .carouselContainer {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    height: 175px;
+    .carouselContent {
+      display: inline-block;
+      white-space: nowrap;
+      animation-name: scroll;
+      animation-duration: 40s;
+      animation-direction: normal;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      padding: 20px 0;
+      height: 100%;
+      .carouselItem {
+        width: 213px;
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 24px;
+        object-fit: cover;
+        object-position: top;
+        transition: all 0.4s ease-in-out;
+        margin: 0 20px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+
+        &:hover {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+        }
+      }
+    }
+
+    .carouselContent2 {
+      display: inline-block;
+      white-space: nowrap;
+      animation-name: scroll;
+      animation-duration: 40s;
+      animation-direction: reverse;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      padding: 20px 0;
+      height: 100%;
+      .carouselItem {
+        width: 213px;
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 24px;
+        object-fit: cover;
+        object-position: top;
+        transition: all 0.4s ease-in-out;
+        margin: 0 20px;
+
+        &:hover {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+  }
+}
