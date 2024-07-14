@@ -6,7 +6,7 @@ import css from "./style.module.css";
 
 const Clients = () => {
   return (
-    <section className={css.section}>
+    <section className={css.section} id="clients">
       <div className="container">
         <SectionHeading>Our clients</SectionHeading>
       </div>

@@ -7,13 +7,14 @@ import BgPattern from "../../../../public/images/bg_pattern.png";
 
 const ServicesSection = () => {
   return (
-    <section className={css.sections}>
+    <section className={css.sections} id="services">
       {services.map((item, index) => {
         if (index !== 0)
           return (
             <div
               className={`${css.section} ${index % 2 === 1 ? css.bgImage : ""}`}
               key={item.id}
+              id={item.id}
             >
               <div className="container">
                 <SectionHeading>{item.titleDetail}</SectionHeading>

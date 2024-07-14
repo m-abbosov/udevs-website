@@ -5,7 +5,7 @@ import css from "./style.module.css";
 
 const OurServicesSection = () => {
   return (
-    <section className={css.section}>
+    <section className={css.section} id="directs">
       <div className="container">
         <SectionHeading data-aos="fade-up">Our services</SectionHeading>
         <div className={css.services}>

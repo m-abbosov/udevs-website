@@ -13,7 +13,7 @@ const TeamSection = () => {
     threshold: 0.1,
   });
   return (
-    <section className={css.section} ref={ref}>
+    <section className={css.section} ref={ref} id="team">
       <div className="container">
         <SectionHeading>Team</SectionHeading>
         <div className="flex items-center justify-between gap-3">

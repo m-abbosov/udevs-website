@@ -9,7 +9,7 @@ import MailIcon from "../../../../public/icons/mail.svg";
 
 const Contact = () => {
   return (
-    <section className={css.section}>
+    <section className={css.section} id="contact">
       <div className="container">
         <SectionHeading>Contact us</SectionHeading>
         <div data-aos="zoom-in" className={css.contact}>

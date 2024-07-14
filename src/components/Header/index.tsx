@@ -1,8 +1,12 @@
+"use client";
+
 import css from "./style.module.css";
 
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import {projects} from "@/utils/projectsData";
 import {services} from "@/utils/servicesData";
 import Image from "next/image";
+import {useState} from "react";
 import ArrowDown from "../../../public/icons/arrow-icon.svg";
 import EngFlag from "../../../public/icons/eng.svg";
 import Logo from "../../../public/icons/logo.svg";
@@ -10,9 +14,15 @@ import RuFlag from "../../../public/icons/rus.svg";
 import Button from "../common/Button";
 
 function Header() {
+  const [activeId, setActiveId] = useState("");
+
+  useIntersectionObserver(setActiveId);
+
   const servicesSorted = services
-    .filter((item) => item.id !== 1)
+    .filter((_, index) => index !== 1)
     .sort((a, b) => a.title.localeCompare(b.title));
+
+  console.log(activeId);
 
   return (
     <header className={`${css.header} fadeToBottom`}>
@@ -22,13 +32,26 @@ function Header() {
             <Image className="w-24" src={Logo} alt="" />
           </a>
           <nav className="flex items-center gap-8">
-            <a className={css.link} href="">
+            <a
+              className={`${css.link} ${
+                activeId === "directs" ? css.active : ""
+              }`}
+              href=""
+            >
               Direction
             </a>
-            <a className={css.link} href="">
+            <a
+              className={`${css.link} ${activeId === "team" ? css.active : ""}`}
+              href=""
+            >
               Command
             </a>
-            <button className={`${css.link} ${css.services}`} type="button">
+            <button
+              className={`${css.link} ${
+                activeId === "services" ? css.active : ""
+              } ${css.services}`}
+              type="button"
+            >
               Services
               <Image src={ArrowDown} alt="" />
               <ul className={css.dropdown}>
@@ -52,13 +75,27 @@ function Header() {
                 ))}
               </ul>
             </button>
-            <a className={css.link} href="">
+            <a
+              className={`${css.link} ${
+                activeId === "tools" ? css.active : ""
+              }`}
+              href=""
+            >
               Tools
             </a>
-            <a className={css.link} href="">
+            <a
+              className={`${css.link} ${
+                activeId === "clients" ? css.active : ""
+              }`}
+              href=""
+            >
               Clients
             </a>
-            <button className={`${css.link} ${css.portfolio}`}>
+            <button
+              className={`${css.link} ${
+                activeId === "portfolio" ? css.active : ""
+              } ${css.portfolio}`}
+            >
               Portfolio
               <Image src={ArrowDown} alt="" />
               <ul className={css.dropdownPortfolio}>

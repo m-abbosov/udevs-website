@@ -9,7 +9,7 @@ import HeroImage from "../../../../public/images/hero-image.svg";
 
 function HeroSection() {
   return (
-    <section className={css.section}>
+    <section className={css.section} id="home">
       <div className="container">
         <div className="flex items-center justify-between">
           <div>

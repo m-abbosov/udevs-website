@@ -55,12 +55,12 @@ import UxUiIcon from "../../public/icons/UX:UI.svg";
 
 export const services = [
   {
-    id: 1,
+    id: "team",
     title: "Team",
     icon: TeamIcon,
   },
   {
-    id: 2,
+    id: "mobile",
     title: "Development of mobile applications",
     titleDetail: "Development of mobile applications",
     description:
@@ -79,7 +79,7 @@ export const services = [
     image: MobileDev,
   },
   {
-    id: 3,
+    id: "erp",
     title: "Development and implementation ERP systems",
     titleDetail: "ERP systems",
     description:
@@ -96,7 +96,7 @@ export const services = [
     image: Desktop,
   },
   {
-    id: 4,
+    id: "design",
     title: "User interface, User experience design",
     titleDetail: "UI / UX design",
     description: "Our company takes a human-centered approach to design",
@@ -118,7 +118,7 @@ export const services = [
     image: Design,
   },
   {
-    id: 5,
+    id: "optimization",
     title: "Optimization IT consulting infrastructure",
     titleDetail: "Optimization Infrastructure",
     description:
@@ -136,7 +136,7 @@ export const services = [
     image: System,
   },
   {
-    id: 6,
+    id: "consulting",
     title: "IT consulting",
     titleDetail: "IT consulting",
     description:

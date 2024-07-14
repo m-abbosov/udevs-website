@@ -27,6 +27,10 @@
     }
   }
 
+  .active {
+    border-bottom: 2px solid var(--primary);
+  }
+
   .services {
     &:hover > .dropdown {
       visibility: visible;

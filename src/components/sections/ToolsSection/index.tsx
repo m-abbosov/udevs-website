@@ -52,7 +52,7 @@ const ToolsSection = () => {
   };
 
   return (
-    <section className={css.section}>
+    <section className={css.section} id="tools">
       <div className="container">
         <SectionHeading>Tools</SectionHeading>
         <div data-aos="fade-up" className={css.tools}>

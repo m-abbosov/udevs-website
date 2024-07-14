@@ -5,9 +5,9 @@ import css from "./style.module.css";
 
 const Projects = () => {
   return (
-    <section className={css.section}>
+    <section className={css.section} id="portfolio">
       {projects.map((project, index) => (
-        <div className={css.project} key={project.id}>
+        <div className={css.project} key={project.id} id={project.name}>
           <div className="container">
             <div
               className={`${css.projectWrapper} ${
