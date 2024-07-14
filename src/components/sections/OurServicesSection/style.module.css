@@ -38,7 +38,7 @@
       margin-top: 72px;
 
       .servicesCard {
-        width: 48%;
+        width: 45%;
         margin-right: 12px;
         margin-bottom: 12px;
         padding: 14px;
@@ -47,7 +47,7 @@
 
         .servicesCardTitle {
           font-size: 16px !important;
-        line-height: 24px !important;
+          line-height: 24px !important;
         }
       }
     }
