@@ -6,6 +6,7 @@ import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import {projects} from "@/utils/projectsData";
 import {scrollToElement} from "@/utils/scrollToElement";
 import {services} from "@/utils/servicesData";
+import {useTranslations} from "next-intl";
 import Image from "next/image";
 import {useState} from "react";
 import ArrowDown from "../../../public/icons/arrow-icon.svg";
@@ -20,6 +21,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({setOpen}) => {
   const [activeId, setActiveId] = useState("");
+  const t = useTranslations("header");
 
   useIntersectionObserver(setActiveId);
 
@@ -51,13 +53,13 @@ const Header: React.FC<HeaderProps> = ({setOpen}) => {
               }`}
               onClick={() => scrollToElement("directs")}
             >
-              Direction
+              {t("link1")}
             </a>
             <a
               className={`${css.link} ${activeId === "team" ? css.active : ""}`}
               onClick={() => scrollToElement("team")}
             >
-              Command
+              {t("link2")}
             </a>
             <button
               className={`${css.link} ${
@@ -65,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({setOpen}) => {
               } ${css.services}`}
               type="button"
             >
-              Services
+              {t("link3")}
               <Image src={ArrowDown} alt="" />
               <ul className={css.dropdown}>
                 <p className={css.dropdownTitle}>Services</p>
@@ -97,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({setOpen}) => {
               }`}
               onClick={() => scrollToElement("tools")}
             >
-              Tools
+              {t("link4")}
             </a>
             <a
               className={`${css.link} ${
@@ -105,14 +107,14 @@ const Header: React.FC<HeaderProps> = ({setOpen}) => {
               }`}
               onClick={() => scrollToElement("clients")}
             >
-              Clients
+              {t("link5")}
             </a>
             <button
               className={`${css.link} ${
                 activeId === "portfolio" ? css.active : ""
               } ${css.portfolio}`}
             >
-              Portfolio
+              {t("link6")}
               <Image src={ArrowDown} alt="" />
               <ul className={css.dropdownPortfolio}>
                 <p className={css.dropdownTitle}>Portfolio</p>
@@ -139,17 +141,17 @@ const Header: React.FC<HeaderProps> = ({setOpen}) => {
               onClick={() => scrollToElement("contact")}
               className={`${css.link} ${css.lang}`}
             >
-              Language
+              {t("link7")}
               <Image src={ArrowDown} alt="" />
               <ul className={css.dropdownLang}>
                 <li>
-                  <a className={css.langItem} href="">
+                  <a className={css.langItem} href="/ru">
                     <Image src={RuFlag} alt="Russian" className={css.flag} />
                     <span className={css.langText}>Рус</span>
                   </a>
                 </li>
                 <li>
-                  <a className={css.langItem} href="">
+                  <a className={css.langItem} href="/en">
                     <Image
                       src={EngFlag}
                       alt="United kingdom"
@@ -160,7 +162,9 @@ const Header: React.FC<HeaderProps> = ({setOpen}) => {
                 </li>
               </ul>
             </button>
-            <Button onClick={() => scrollToElement("contact")}>Contact</Button>
+            <Button onClick={() => scrollToElement("contact")}>
+              {t("contact")}
+            </Button>
           </nav>
         </div>
       </div>

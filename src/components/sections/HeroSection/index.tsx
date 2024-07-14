@@ -4,20 +4,20 @@ import css from "./style.module.css";
 
 import Button from "@/components/common/Button";
 import {scrollToElement} from "@/utils/scrollToElement";
+import {useTranslations} from "next-intl";
 import {TypeAnimation} from "react-type-animation";
 import Logo from "../../../../public/icons/logo.svg";
 import HeroImage from "../../../../public/images/hero-image.svg";
 
 function HeroSection() {
+  const t = useTranslations("hero");
   return (
     <section className={css.section} id="home">
       <div className="container">
         <div className={`flex items-center justify-between ${css.content} `}>
           <div className={"md:w-full lg:w-1/2"}>
             <Image className={`${css.logo} fadeToTop`} src={Logo} alt="Udevs" />
-            <h1 className={`${css.title} fadeToTop dy-1`}>
-              IT-Outsourcing Company
-            </h1>
+            <h1 className={`${css.title} fadeToTop dy-1`}>{t("title")}</h1>
             <TypeAnimation
               className={`${css.titleWrite} fadeToTop dy-2 `}
               sequence={[
@@ -41,7 +41,7 @@ function HeroSection() {
               className={`fadeToTop dy-2 ${css.contactBtn}`}
               size="lg"
             >
-              Contact
+              {t("btn")}
             </Button>
           </div>
           <Image src={HeroImage} alt="Udevs - Software development agency" />

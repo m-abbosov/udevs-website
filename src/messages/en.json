@@ -1,0 +1,16 @@
+{
+  "header": {
+    "link1": "Direction",
+    "link2": "Command",
+    "link3": "Services",
+    "link4": "Tools",
+    "link5": "Clients",
+    "link6": "Portfolio",
+    "link7": "Language",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "IT-Outsourcing Company",
+    "btn": "Contact"
+  }
+}
