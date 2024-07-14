@@ -15,7 +15,7 @@ function Header() {
     .sort((a, b) => a.title.localeCompare(b.title));
 
   return (
-    <header className={css.header}>
+    <header className={`${css.header} fadeToBottom`}>
       <div className="container">
         <div className=" flex items-center justify-between">
           <a href="/">

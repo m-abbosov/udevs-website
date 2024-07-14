@@ -68,6 +68,7 @@ const ServicesSection = () => {
                         />
                       )}
                       <Image
+                        data-aos="zoom-in"
                         className={css.serviceImage}
                         src={item.image}
                         alt=""

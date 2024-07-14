@@ -12,7 +12,7 @@ const Contact = () => {
     <section className={css.section}>
       <div className="container">
         <SectionHeading>Contact us</SectionHeading>
-        <div className={css.contact}>
+        <div data-aos="zoom-in" className={css.contact}>
           <h3 className={css.contactTitle}>Leave us a message</h3>
           <div className={css.contactWrapper}>
             <form className={css.contactBox}>

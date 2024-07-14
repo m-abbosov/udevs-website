@@ -14,14 +14,21 @@ const Projects = () => {
                 index % 2 === 1 ? css.reverse : ""
               }`}
             >
-              <Image style={{width: "48%"}} src={project.image} alt="" />
+              <Image
+                data-aos="zoom-in"
+                style={{width: "48%"}}
+                src={project.image}
+                alt=""
+              />
               <div style={{width: "48%"}}>
                 <Image
+                  data-aos="fade-up"
                   className={css.nameImage}
                   src={project.nameImage}
                   alt=" "
                 />
                 <span
+                  data-aos="fade-up"
                   className={css.badge}
                   style={{background: project.bgColor, color: project.color}}
                 >
@@ -31,7 +38,9 @@ const Projects = () => {
                 <SectionHeading type="description">
                   {project.description}
                 </SectionHeading>
-                <h3 className={css.subTitle}>What we did?</h3>
+                <h3 data-aos="fade-up" className={css.subTitle}>
+                  What we did?
+                </h3>
                 <div className={css.services}>
                   {project.technologies.map((tech) => (
                     <div key={tech.id} className={css.card}>

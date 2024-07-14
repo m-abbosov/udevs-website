@@ -55,7 +55,7 @@ const ToolsSection = () => {
     <section className={css.section}>
       <div className="container">
         <SectionHeading>Tools</SectionHeading>
-        <div className={css.tools}>
+        <div data-aos="fade-up" className={css.tools}>
           {tools.map((tool, index) => (
             <div
               onClick={() => {
@@ -73,7 +73,7 @@ const ToolsSection = () => {
             </div>
           ))}
         </div>
-        <div className={css.technologies}>
+        <div data-aos="fade-up" className={css.technologies}>
           {technologies.map((item) => (
             <div
               className={`${css.technologyItem} ${classNames(item)}`}

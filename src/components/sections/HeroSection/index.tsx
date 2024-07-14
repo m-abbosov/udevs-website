@@ -13,10 +13,12 @@ function HeroSection() {
       <div className="container">
         <div className="flex items-center justify-between">
           <div>
-            <Image className={css.logo} src={Logo} alt="Udevs" />
-            <h1 className={css.title}>IT-Outsourcing Company</h1>
+            <Image className={`${css.logo} fadeToTop`} src={Logo} alt="Udevs" />
+            <h1 className={`${css.title} fadeToTop dy-1`}>
+              IT-Outsourcing Company
+            </h1>
             <TypeAnimation
-              className={css.titleWrite}
+              className={`${css.titleWrite} fadeToTop dy-2 `}
               sequence={[
                 "Optimization IT consulting infrastructure",
                 2000,
@@ -33,7 +35,9 @@ function HeroSection() {
               speed={50}
               repeat={Infinity}
             />
-            <Button size="lg">Contact</Button>
+            <Button className="fadeToTop dy-2" size="lg">
+              Contact
+            </Button>
           </div>
           <Image src={HeroImage} alt="Udevs - Software development agency" />
         </div>

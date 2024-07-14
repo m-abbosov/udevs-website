@@ -4,8 +4,15 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: "lg" | "md";
 };
 
-const Button: React.FC<ButtonProps> = ({children, size = "md", ...props}) => {
-  const classNames = `${css.button} ${size === "lg" ? css.buttonLg : ""}`;
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className,
+  size = "md",
+  ...props
+}) => {
+  const classNames = `${css.button} ${className} ${
+    size === "lg" ? css.buttonLg : ""
+  }`;
 
   return (
     <button className={classNames} {...props}>

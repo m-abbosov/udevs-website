@@ -9,7 +9,7 @@ const HowWeWork = () => {
       <div className="container">
         <SectionHeading>How we work!</SectionHeading>
       </div>
-      <div className={css.steps}>
+      <div data-aos="fade-up" className={css.steps}>
         {workData.map((step) => (
           <div className={css.step} key={step.id}>
             <Image src={step.icon} alt={step.title} />

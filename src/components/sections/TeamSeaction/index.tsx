@@ -32,7 +32,7 @@ const TeamSection = () => {
             />
             <h3 className={css.title}>Dedicated team</h3>
           </div>
-          <Image className="w-48p" src={TeamImage} alt="" />
+          <Image data-aos="zoom-in" className="w-48p" src={TeamImage} alt="" />
         </div>
       </div>
     </section>

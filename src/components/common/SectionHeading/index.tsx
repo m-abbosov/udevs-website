@@ -16,11 +16,18 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
 }) => {
   if (type === "description")
     return (
-      <p className={`${styles.description} ${size === "lg" ? styles.lg : ""}`}>
+      <p
+        data-aos="fade-up"
+        className={`${styles.description} ${size === "lg" ? styles.lg : ""}`}
+      >
         {children}
       </p>
     );
-  return <h2 className={`${styles.heading} ${className}`}>{children}</h2>;
+  return (
+    <h2 data-aos="fade-up" className={`${styles.heading} ${className}`}>
+      {children}
+    </h2>
+  );
 };
 
 export default SectionHeading;
