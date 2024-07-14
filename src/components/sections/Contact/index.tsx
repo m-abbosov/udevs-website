@@ -28,7 +28,7 @@ const Contact = () => {
     <section className={css.section} id="contact">
       <div className="container">
         <SectionHeading>Contact us</SectionHeading>
-        <div data-aos="zoom-in" className={css.contact}>
+        <div className={css.contact}>
           <h3 className={css.contactTitle}>Leave us a message</h3>
           <div className={css.contactWrapper}>
             <form onSubmit={formik.handleSubmit} className={css.contactBox}>

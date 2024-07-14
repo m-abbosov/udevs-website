@@ -7,20 +7,13 @@ const OurServicesSection = () => {
   return (
     <section className={css.section} id="directs">
       <div className="container">
-        <SectionHeading
-          className="md:text-center lg:text-left"
-          data-aos="fade-up"
-        >
+        <SectionHeading className="md:text-center lg:text-left">
           Our services
         </SectionHeading>
         <div className={css.services}>
           {services.map((item) => {
             return (
-              <div
-                data-aos="fade-up"
-                className={css.servicesCard}
-                key={item.id}
-              >
+              <div className={css.servicesCard} key={item.id}>
                 <Image
                   className={css.servicesCardImage}
                   src={item.icon}
