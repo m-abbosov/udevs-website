@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className={inter.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

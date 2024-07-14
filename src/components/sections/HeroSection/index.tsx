@@ -17,7 +17,18 @@ function HeroSection() {
             <h1 className={css.title}>IT-Outsourcing Company</h1>
             <TypeAnimation
               className={css.titleWrite}
-              sequence={["Optimization IT consulting infrastructure", 1000]}
+              sequence={[
+                "Optimization IT consulting infrastructure",
+                2000,
+                "IT Consulting",
+                2000,
+                "Development of mobile applications",
+                2000,
+                "Development and implementation ERP systems",
+                2000,
+                "User interface, User experience design",
+                2000,
+              ]}
               wrapper="h1"
               speed={50}
               repeat={Infinity}
