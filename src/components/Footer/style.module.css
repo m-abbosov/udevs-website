@@ -58,4 +58,17 @@
       }
     }
   }
+
+  @media (max-width: 900px) {
+    .navigation {
+      margin-top: 16px;
+      justify-content: center;
+      min-width: 50%;
+      flex-direction: column;
+
+      .navItem {
+        margin: 20px 0;
+      }
+    }
+  }
 }

@@ -18,4 +18,33 @@
     font-weight: 800;
     color: var(--font-color);
   }
+
+  @media (max-width: 900px) {
+    padding: 32px 0;
+
+    .content {
+      align-items: start;
+      justify-content: flex-start;
+      flex-direction: column-reverse;
+    }
+
+    .teamImage {
+      max-width: 300px;
+      margin: 32px;
+      align-self: center;
+    }
+
+    .countUp {
+      margin-bottom: 16px;
+      font-size: 80px;
+      line-height: 70px !important;
+    }
+
+    .title {
+      font-size: 24px;
+      line-height: 72px;
+      font-weight: 800;
+      margin-bottom: 0;
+    }
+  }
 }

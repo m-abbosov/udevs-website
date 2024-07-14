@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
 :root {
   --primary: #1b5bf7;
   --primary-disabled: #84a0e7;
@@ -21,6 +22,7 @@
   --testing: #e1e9fe;
   --backend: #bddaed;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -28,10 +30,13 @@
   font-family: "Manrope", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   width: 100vw;
-  scroll-behavior: smooth;
 }
 
 .container {
@@ -114,5 +119,13 @@ body {
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .w-48p {
+    width: 100%;
+    max-width: 500px;
   }
 }

@@ -11,6 +11,14 @@
       align-items: center;
       justify-content: space-between;
 
+      .projectImage {
+        width: 48%
+      }
+
+      .projectContent {
+        width: 48%;
+      }
+
       .nameImage {
         display: block;
         margin-bottom: 30px;
@@ -58,6 +66,57 @@
 
     .reverse {
       flex-direction: row-reverse;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .project {
+      padding: 42px 0;
+
+      .projectWrapper {
+        flex-direction: column;
+
+        .projectContent {
+          width: 100%
+        }
+
+        .projectImage {
+          width: 100%
+        }
+
+        .nameImage {
+          display: none;
+        }
+
+        .badge {
+          display: none
+        }
+
+        .services {
+          gap: 0;
+
+          .card {
+            min-width: 95px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            padding: 8px;
+            min-height: 100px;
+            width: 30%;
+            max-width: 32%;
+
+            .cardImage {
+              width: 42px;
+              height: 42px;
+              margin-bottom: 8px;
+            }
+
+            .cardTitle {
+              font-size: 14px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -5,6 +5,11 @@
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 30px;
+
+  @media (max-width: 900px) {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
 }
 
 .description {
@@ -13,6 +18,12 @@
   font-weight: 500;
   color: var(--font-color);
   margin-bottom: 1.45rem;
+
+  @media (max-width: 900px) {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 0;
+  }
 }
 
 .lg {

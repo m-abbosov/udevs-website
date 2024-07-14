@@ -7,6 +7,7 @@
     width: 100%;
     position: relative;
     height: 175px;
+
     .carouselContent {
       display: inline-block;
       white-space: nowrap;
@@ -18,6 +19,7 @@
       animation-play-state: running;
       padding: 20px 0;
       height: 100%;
+
       .carouselItem {
         width: 213px;
         display: inline-block;
@@ -50,6 +52,7 @@
       animation-play-state: running;
       padding: 20px 0;
       height: 100%;
+
       .carouselItem {
         width: 213px;
         display: inline-block;
@@ -70,12 +73,28 @@
       }
     }
   }
+
+  @media (max-width: 900px) {
+    padding: 65px 0;
+
+    .carouselContainer {
+
+      .carouselContent,
+      .carouselContent2 {
+        .carouselItem {
+          width: 170px;
+        }
+      }
+    }
+
+  }
 }
 
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
@@ -89,6 +108,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(50%);
     -webkit-transform: translateX(50%);

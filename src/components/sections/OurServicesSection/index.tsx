@@ -7,7 +7,12 @@ const OurServicesSection = () => {
   return (
     <section className={css.section} id="directs">
       <div className="container">
-        <SectionHeading data-aos="fade-up">Our services</SectionHeading>
+        <SectionHeading
+          className="md:text-center lg:text-left"
+          data-aos="fade-up"
+        >
+          Our services
+        </SectionHeading>
         <div className={css.services}>
           {services.map((item) => {
             return (

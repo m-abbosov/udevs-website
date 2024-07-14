@@ -8,11 +8,15 @@ import Projects from "@/components/sections/Projects";
 import ServicesSection from "@/components/sections/ServicesSection";
 import TeamSection from "@/components/sections/TeamSeaction";
 import ToolsSection from "@/components/sections/ToolsSection";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import HeaderMobile from "@/components/HeaderMobile";
 import AOS from "aos";
 
 export default function Home() {
+  const [open, setOpen] = useState<boolean>(false);
   useEffect(() => {
     AOS.init({
       duration: 300, // Duration of animations in milliseconds
@@ -37,6 +41,8 @@ export default function Home() {
   }, []);
   return (
     <main>
+      <Header setOpen={setOpen} />
+      <HeaderMobile setOpen={setOpen} open={open} />
       <HeroSection />
       <OurServicesSection />
       <TeamSection />
@@ -46,6 +52,7 @@ export default function Home() {
       <Projects />
       <HowWeWork />
       <Contact />
+      <Footer />
     </main>
   );
 }

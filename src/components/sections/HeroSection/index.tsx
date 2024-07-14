@@ -3,6 +3,7 @@ import Image from "next/image";
 import css from "./style.module.css";
 
 import Button from "@/components/common/Button";
+import {scrollToElement} from "@/utils/scrollToElement";
 import {TypeAnimation} from "react-type-animation";
 import Logo from "../../../../public/icons/logo.svg";
 import HeroImage from "../../../../public/images/hero-image.svg";
@@ -11,8 +12,8 @@ function HeroSection() {
   return (
     <section className={css.section} id="home">
       <div className="container">
-        <div className="flex items-center justify-between">
-          <div>
+        <div className={`flex items-center justify-between ${css.content} `}>
+          <div className={"md:w-full lg:w-1/2"}>
             <Image className={`${css.logo} fadeToTop`} src={Logo} alt="Udevs" />
             <h1 className={`${css.title} fadeToTop dy-1`}>
               IT-Outsourcing Company
@@ -35,7 +36,11 @@ function HeroSection() {
               speed={50}
               repeat={Infinity}
             />
-            <Button className="fadeToTop dy-2" size="lg">
+            <Button
+              onClick={() => scrollToElement("contact")}
+              className={`fadeToTop dy-2 ${css.contactBtn}`}
+              size="lg"
+            >
               Contact
             </Button>
           </div>

@@ -5,6 +5,7 @@
   background-size: cover;
   width: 100%;
   padding: 80px 0;
+
   .contact {
     width: 100%;
     margin-top: 80px;
@@ -29,10 +30,17 @@
       .contactBox {
         width: 45%;
 
+        .error {
+          color: red;
+          margin-bottom: 10px;
+          font-size: 16px;
+        }
+
         .contactList {
           .contactListItem {
             margin-bottom: 24px;
           }
+
           .contactListLink {
             display: flex;
             align-items: center;
@@ -86,6 +94,7 @@
           -ms-transition: transform 120ms ease-in;
           -o-transition: transform 120ms ease-in;
         }
+
         .input__field {
           outline: none;
           padding: 18.5px 14px;
@@ -100,9 +109,10 @@
           -ms-border-radius: 4px;
           -o-border-radius: 4px;
           resize: none;
+
           &:focus,
           &:not(:placeholder-shown) {
-            & + .input__label {
+            &+.input__label {
               transform: translate(0.25rem, -30px) scale(0.8);
               background: white;
               color: currentColor;
@@ -111,6 +121,37 @@
               -ms-transform: translate(0.25rem, -30px) scale(0.8);
               -o-transform: translate(0.25rem, -30px) scale(0.8);
             }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 20px 0;
+
+    .contact {
+      margin-top: 40px;
+      padding: 0;
+      box-shadow: none;
+
+      .contactWrapper {
+        display: block;
+        margin-top: 0;
+
+        .contactBox {
+          width: 100%;
+
+          .map {
+            display: none;
+          }
+
+          .contactList {
+            margin-top: 20px;
+          }
+
+          .socials {
+            display: none;
           }
         }
       }

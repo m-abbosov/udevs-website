@@ -1,5 +1,6 @@
 .sections {
   min-height: 100vh;
+
   .section {
     width: 100%;
     padding: 80px 0;
@@ -73,6 +74,18 @@
 
     .serviceItem {
       background-color: var(--background);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .section {
+      padding: 16px 0;
+
+      .content {
+        align-items: start;
+        justify-content: flex-start;
+        flex-direction: column-reverse;
+      }
     }
   }
 }

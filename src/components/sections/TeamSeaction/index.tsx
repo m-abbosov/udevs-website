@@ -16,7 +16,9 @@ const TeamSection = () => {
     <section className={css.section} ref={ref} id="team">
       <div className="container">
         <SectionHeading>Team</SectionHeading>
-        <div className="flex items-center justify-between gap-3">
+        <div
+          className={`flex justify-between items-center gap-3 ${css.content}`}
+        >
           <div className="w-48p">
             <SectionHeading type="description">
               For each project, we form a team that includes a project manager,
@@ -32,7 +34,12 @@ const TeamSection = () => {
             />
             <h3 className={css.title}>Dedicated team</h3>
           </div>
-          <Image data-aos="zoom-in" className="w-48p" src={TeamImage} alt="" />
+          <Image
+            data-aos="zoom-in"
+            className={`${css.teamImage} w-48p `}
+            src={TeamImage}
+            alt=""
+          />
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
 import Button from "@/components/common/Button";
 import SectionHeading from "@/components/common/SectionHeading";
+import {useFormik} from "formik";
 import Image from "next/image";
+import * as Yup from "yup";
 import css from "./style.module.css";
 
 import CallIcon from "../../../../public/icons/call.svg";
@@ -8,6 +10,20 @@ import LocationIcon from "../../../../public/icons/location.svg";
 import MailIcon from "../../../../public/icons/mail.svg";
 
 const Contact = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      comment: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Fill in the field"),
+      email: Yup.string().email("Invalid email").required("Fill in the field"),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
   return (
     <section className={css.section} id="contact">
       <div className="container">
@@ -15,20 +31,28 @@ const Contact = () => {
         <div data-aos="zoom-in" className={css.contact}>
           <h3 className={css.contactTitle}>Leave us a message</h3>
           <div className={css.contactWrapper}>
-            <form className={css.contactBox}>
+            <form onSubmit={formik.handleSubmit} className={css.contactBox}>
+              {formik.touched.name && formik.errors.name ? (
+                <p className={css.error}>{formik.errors.name}</p>
+              ) : null}
               <label className={css.input}>
                 <input
                   className={css.input__field}
                   type="text"
                   placeholder=" "
+                  {...formik.getFieldProps("name")}
                 />
                 <span className={css.input__label}>Name</span>
               </label>
+              {formik.touched.email && formik.errors.email ? (
+                <p className={css.error}>{formik.errors.email}</p>
+              ) : null}
               <label className={css.input}>
                 <input
                   className={css.input__field}
-                  type="text"
+                  type="email"
                   placeholder=" "
+                  {...formik.getFieldProps("email")}
                 />
                 <span className={css.input__label}>Your email</span>
               </label>
@@ -37,12 +61,19 @@ const Contact = () => {
                   rows={4}
                   className={css.input__field}
                   placeholder=" "
+                  {...formik.getFieldProps("comment")}
                 />
                 <span className={css.input__label}>
                   Briefly describe your project
                 </span>
               </label>
-              <Button size="lg">Send</Button>
+              <Button
+                type="submit"
+                className="md:mx-auto lg:mx-0 block"
+                size="lg"
+              >
+                Send
+              </Button>
             </form>
             <div className={css.contactBox}>
               <ul className={css.contactList}>

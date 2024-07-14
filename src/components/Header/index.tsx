@@ -4,6 +4,7 @@ import css from "./style.module.css";
 
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import {projects} from "@/utils/projectsData";
+import {scrollToElement} from "@/utils/scrollToElement";
 import {services} from "@/utils/servicesData";
 import Image from "next/image";
 import {useState} from "react";
@@ -13,7 +14,11 @@ import Logo from "../../../public/icons/logo.svg";
 import RuFlag from "../../../public/icons/rus.svg";
 import Button from "../common/Button";
 
-function Header() {
+type HeaderProps = {
+  setOpen: (open: boolean) => void;
+};
+
+const Header: React.FC<HeaderProps> = ({setOpen}) => {
   const [activeId, setActiveId] = useState("");
 
   useIntersectionObserver(setActiveId);
@@ -22,8 +27,6 @@ function Header() {
     .filter((_, index) => index !== 1)
     .sort((a, b) => a.title.localeCompare(b.title));
 
-  console.log(activeId);
-
   return (
     <header className={`${css.header} fadeToBottom`}>
       <div className="container">
@@ -31,18 +34,28 @@ function Header() {
           <a href="/">
             <Image className="w-24" src={Logo} alt="" />
           </a>
-          <nav className="flex items-center gap-8">
+          <button onClick={() => setOpen(true)} className={css.menuBtn}>
+            <svg
+              className={css.menuBtnIcon}
+              focusable="false"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+            </svg>
+          </button>
+          <nav className={`flex items-center gap-8 ${css.nav}`}>
             <a
               className={`${css.link} ${
                 activeId === "directs" ? css.active : ""
               }`}
-              href=""
+              onClick={() => scrollToElement("directs")}
             >
               Direction
             </a>
             <a
               className={`${css.link} ${activeId === "team" ? css.active : ""}`}
-              href=""
+              onClick={() => scrollToElement("team")}
             >
               Command
             </a>
@@ -58,7 +71,10 @@ function Header() {
                 <p className={css.dropdownTitle}>Services</p>
                 {servicesSorted.map((item) => (
                   <li key={item.id} className={css.dropdownItem}>
-                    <a href="/mobile" className={css.dropdownLink}>
+                    <a
+                      onClick={() => scrollToElement(item.id)}
+                      className={css.dropdownLink}
+                    >
                       <div className={css.dropdownIcon}>
                         <Image
                           width={20}
@@ -79,7 +95,7 @@ function Header() {
               className={`${css.link} ${
                 activeId === "tools" ? css.active : ""
               }`}
-              href=""
+              onClick={() => scrollToElement("tools")}
             >
               Tools
             </a>
@@ -87,7 +103,7 @@ function Header() {
               className={`${css.link} ${
                 activeId === "clients" ? css.active : ""
               }`}
-              href=""
+              onClick={() => scrollToElement("clients")}
             >
               Clients
             </a>
@@ -103,7 +119,10 @@ function Header() {
 
                 {projects.map((item) => (
                   <li key={item.id} className={css.dropdownItem}>
-                    <a href="/mobile" className={css.dropdownLink}>
+                    <a
+                      onClick={() => scrollToElement(item.name)}
+                      className={css.dropdownLink}
+                    >
                       <div
                         className={css.dropdownIcon}
                         style={{background: item.bgColor, color: item.color}}
@@ -116,7 +135,10 @@ function Header() {
                 ))}
               </ul>
             </button>
-            <button className={`${css.link} ${css.lang}`}>
+            <button
+              onClick={() => scrollToElement("contact")}
+              className={`${css.link} ${css.lang}`}
+            >
               Language
               <Image src={ArrowDown} alt="" />
               <ul className={css.dropdownLang}>
@@ -138,12 +160,12 @@ function Header() {
                 </li>
               </ul>
             </button>
-            <Button>Contact</Button>
+            <Button onClick={() => scrollToElement("contact")}>Contact</Button>
           </nav>
         </div>
       </div>
     </header>
   );
-}
+};
 
 export default Header;

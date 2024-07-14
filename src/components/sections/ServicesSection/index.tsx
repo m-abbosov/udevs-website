@@ -19,9 +19,9 @@ const ServicesSection = () => {
               <div className="container">
                 <SectionHeading>{item.titleDetail}</SectionHeading>
                 <div
-                  className={`flex items-center h-full justify-between gap-4 ${
-                    index % 2 === 0 ? "flex-row-reverse" : ""
-                  }`}
+                  className={`flex justify-between items-center gap-4 ${
+                    css.content
+                  } ${index % 2 === 0 ? "flex-row-reverse" : ""}`}
                 >
                   <div className="w-48p">
                     <SectionHeading type="description" size="lg">

@@ -1,5 +1,5 @@
 import SectionHeading from "@/components/common/SectionHeading";
-import {projects} from "@/utils/projectsData";
+import { projects } from "@/utils/projectsData";
 import Image from "next/image";
 import css from "./style.module.css";
 
@@ -16,11 +16,11 @@ const Projects = () => {
             >
               <Image
                 data-aos="zoom-in"
-                style={{width: "48%"}}
+                className={css.projectImage}
                 src={project.image}
                 alt=""
               />
-              <div style={{width: "48%"}}>
+              <div className={css.projectContent}>
                 <Image
                   data-aos="fade-up"
                   className={css.nameImage}
@@ -44,7 +44,7 @@ const Projects = () => {
                 <div className={css.services}>
                   {project.technologies.map((tech) => (
                     <div key={tech.id} className={css.card}>
-                      <Image src={tech.icon} alt="" />
+                      <Image className={css.cardImage} src={tech.icon} alt="" />
                       <span className={css.cardTitle}>{tech.title}</span>
                     </div>
                   ))}
