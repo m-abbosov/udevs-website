@@ -34,12 +34,7 @@ const TeamSection = () => {
             />
             <h3 className={css.title}>Dedicated team</h3>
           </div>
-          <Image
-            data-aos="zoom-in"
-            className={`${css.teamImage} w-48p `}
-            src={TeamImage}
-            alt=""
-          />
+          <Image className={`${css.teamImage} w-48p `} src={TeamImage} alt="" />
         </div>
       </div>
     </section>
