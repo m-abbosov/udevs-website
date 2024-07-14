@@ -1,11 +1,19 @@
 import css from "./style.module.css";
 
+import {projects} from "@/utils/projectsData";
+import {services} from "@/utils/servicesData";
 import Image from "next/image";
 import ArrowDown from "../../../public/icons/arrow-icon.svg";
+import EngFlag from "../../../public/icons/eng.svg";
 import Logo from "../../../public/icons/logo.svg";
+import RuFlag from "../../../public/icons/rus.svg";
 import Button from "../common/Button";
 
 function Header() {
+  const servicesSorted = services
+    .filter((item) => item.id !== 1)
+    .sort((a, b) => a.title.localeCompare(b.title));
+
   return (
     <header className={css.header}>
       <div className="container">
@@ -20,63 +28,79 @@ function Header() {
             <a className={css.link} href="">
               Command
             </a>
-            <a
-              className={css.link}
-              href=""
-              id="dropdownHoverButton"
-              data-dropdown-toggle="dropdownHover"
-              data-dropdown-trigger="hover"
-            >
+            <button className={`${css.link} ${css.services}`} type="button">
               Services
               <Image src={ArrowDown} alt="" />
-            </a>
-            {/* <ul className="header-module--dropdown--26q1g">
-            <p className="header-module--title--bRpng">Services</p>
-            <li className="header-module--dropdownItem--2jeHu">
-              <a href="/mobile">
-                <Image src="" alt="Mobile development" />
-                <span>Development of mobile applications</span>
-              </a>
-            </li>
-            <li className="header-module--dropdownItem--2jeHu">
-              <a href="/erp">
-                <Image src="" alt="ERP systems" />
-                <span>Development and implementation ERP systems</span>
-              </a>
-            </li>
-            <li className="header-module--dropdownItem--2jeHu">
-              <a href="/design">
-                <Image src="" alt="UX/UI design" />
-                <span>User interface, User experience design</span>
-              </a>
-            </li>
-            <li className="header-module--dropdownItem--2jeHu">
-              <a href="/consulting">
-                <Image src="" alt="IT Consulting" />
-                <span>IT consulting</span>
-              </a>
-            </li>
-            <li className="header-module--dropdownItem--2jeHu">
-              <a href="/optimization">
-                <Image src="" alt="Optimization" />
-                <span>Optimization IT consulting infrastructure</span>
-              </a>
-            </li>
-          </ul> */}
+              <ul className={css.dropdown}>
+                <p className={css.dropdownTitle}>Services</p>
+                {servicesSorted.map((item) => (
+                  <li key={item.id} className={css.dropdownItem}>
+                    <a href="/mobile" className={css.dropdownLink}>
+                      <div className={css.dropdownIcon}>
+                        <Image
+                          width={20}
+                          height={20}
+                          src={item.icon}
+                          alt={item.title}
+                        />
+                      </div>
+                      <span className={css.dropdownItemTitle}>
+                        {item.title}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </button>
             <a className={css.link} href="">
               Tools
             </a>
             <a className={css.link} href="">
               Clients
             </a>
-            <a className={css.link} href="">
+            <button className={`${css.link} ${css.portfolio}`}>
               Portfolio
               <Image src={ArrowDown} alt="" />
-            </a>
-            <a className={css.link} href="">
+              <ul className={css.dropdownPortfolio}>
+                <p className={css.dropdownTitle}>Portfolio</p>
+
+                {projects.map((item) => (
+                  <li key={item.id} className={css.dropdownItem}>
+                    <a href="/mobile" className={css.dropdownLink}>
+                      <div
+                        className={css.dropdownIcon}
+                        style={{background: item.bgColor, color: item.color}}
+                      >
+                        {item.name.slice(0, 1)}
+                      </div>
+                      <span className={css.dropdownItemTitle}>{item.name}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </button>
+            <button className={`${css.link} ${css.lang}`}>
               Language
               <Image src={ArrowDown} alt="" />
-            </a>
+              <ul className={css.dropdownLang}>
+                <li>
+                  <a className={css.langItem} href="">
+                    <Image src={RuFlag} alt="Russian" className={css.flag} />
+                    <span className={css.langText}>Рус</span>
+                  </a>
+                </li>
+                <li>
+                  <a className={css.langItem} href="">
+                    <Image
+                      src={EngFlag}
+                      alt="United kingdom"
+                      className={css.flag}
+                    />
+                    <span className={css.langText}>Eng</span>
+                  </a>
+                </li>
+              </ul>
+            </button>
             <Button>Contact</Button>
           </nav>
         </div>
