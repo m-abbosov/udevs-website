@@ -1,5 +1,6 @@
 import css from "./style.module.css";
 
+import {projects} from "@/utils/projectsData";
 import {scrollToElement} from "@/utils/scrollToElement";
 import Image from "next/image";
 import Logo from "../../../public/icons/logo.svg";
@@ -72,19 +73,15 @@ const Footer = () => {
           </div>
           <div className={css.navItem}>
             <h3 className="text-lg font-bold mb-4">Portfolio</h3>
-
-            <a className={css.navItemLink} href="/delever">
-              Delever
-            </a>
-            <a className={css.navItemLink} href="/smsuz">
-              Sms.uz
-            </a>
-            <a className={css.navItemLink} href="/goodzone">
-              Goodzone
-            </a>
-            <a className={css.navItemLink} href="/iman">
-              Iman
-            </a>
+            {projects.map((item) => (
+              <a
+                key={item.id}
+                className={css.navItemLink}
+                onClick={() => scrollToElement(item.name)}
+              >
+                {item.name}
+              </a>
+            ))}
           </div>
         </nav>
 

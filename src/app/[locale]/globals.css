@@ -39,6 +39,11 @@ body {
   width: 100vw;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
