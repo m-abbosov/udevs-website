@@ -1,5 +1,6 @@
 import css from "./style.module.css";
 
+import {scrollToElement} from "@/utils/scrollToElement";
 import Image from "next/image";
 import Logo from "../../../public/icons/logo.svg";
 
@@ -11,39 +12,67 @@ const Footer = () => {
         <nav className={css.navigation}>
           <div className={css.navItem}>
             <h3 className="text-lg font-bold mb-4">About us</h3>
-            <a className={css.navItemLink} href="/directs">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("directs")}
+            >
               Direction
             </a>
-            <a className={css.navItemLink} href="/team">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("team")}
+            >
               Command
             </a>
-            <a className={css.navItemLink} href="/tools">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("tools")}
+            >
               Tools
             </a>
-            <a className={css.navItemLink} href="/clients">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("clients")}
+            >
               Clients
             </a>
           </div>
           <div className={css.navItem}>
             <h3 className="text-lg font-bold mb-4">Services</h3>
-            <a className={css.navItemLink} href="/mobile">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("mobile")}
+            >
               Development of mobile applications
             </a>
-            <a className={css.navItemLink} href="/erp">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("erp")}
+            >
               Development and implementation ERP systems
             </a>
-            <a className={css.navItemLink} href="/design">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("design")}
+            >
               User interface, User experience design
             </a>
-            <a className={css.navItemLink} href="/consulting">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("consulting")}
+            >
               IT consulting
             </a>
-            <a className={css.navItemLink} href="/optimization">
+            <a
+              className={css.navItemLink}
+              onClick={() => scrollToElement("optimization")}
+            >
               Optimization IT consulting infrastructure
             </a>
           </div>
           <div className={css.navItem}>
             <h3 className="text-lg font-bold mb-4">Portfolio</h3>
+
             <a className={css.navItemLink} href="/delever">
               Delever
             </a>
